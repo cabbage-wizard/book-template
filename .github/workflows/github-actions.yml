@@ -1,11 +1,12 @@
 name: GitHub Actions Workflow
 on:
   workflow_dispatch: 
-    jobs:
-      main:
-        runs-on: ubuntu-latest
-        steps:
-          - name: check out code
-            uses: actions/checkout@v6
-          - name: list files
-            run: ls ${{ github.workspace }}
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out code
+        uses: actions/checkout@v6
+      - name: list files
+        run: |
+          ls ${{ github.workspace }}
