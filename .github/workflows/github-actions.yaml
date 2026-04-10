@@ -1,0 +1,21 @@
+name: Generate book artifacts
+on:
+  workflow_dispatch: 
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Install dependencies
+        run: make install-dependencies
+      - name: Generate book artifacts
+        run: make all
+      - name: Upload book artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: pandoc-artifacts
+          path: |
+            build
+      - name: Clean up build directory
+        run: make clean
