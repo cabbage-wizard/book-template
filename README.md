@@ -8,7 +8,7 @@
 
 #### Text
 
-Place your input Markdown files into the `src` directory. To keep your chapters in order, add the chapter number (with leading zeroes if necessary) at the start of the filename.
+Place your input Markdown files into the `src` directory. To keep your chapters in order, add the chapter number to the start of the filename (e.g., `01-my-first-chapter.md`).
 
 #### Cover
 
@@ -37,7 +37,7 @@ To generate your outputs locally, you can use the targets included in `Makefile`
 
 ### Building with GitHub Actions
 
-This repository includes several GitHub Actions workflows that will generate outputs based on the content checked into the `src` directory. These workflows must all be manually triggered, which can be done via the GitHub website. From your repository, go to the `Actions` tab and find the workflow you wish to run on the left. From there, click `Run workflow`. After the run has finished, an artifact containing your final output will be available for download.
+This repository includes GitHub Actions workflows that will generate outputs based on the content of the `src` directory on GitHub. These workflows must all be manually triggered, which can be done via the GitHub website. From your repository, go to the `Actions` tab and find the workflow you wish to run on the left. From there, click `Run workflow`. After the run has finished, an artifact containing your final output will be available for download.
 
 **Available workflows:**
 
