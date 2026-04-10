@@ -1,0 +1,10 @@
+---
+title: My Title
+subtitle: My Subtitle
+author: My Name
+publisher: My Press
+language: en-US
+cover-image: cover.jpg
+header-includes:
+  - \usepackage{graphicx}
+---
