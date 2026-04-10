@@ -1,0 +1,21 @@
+name: Generate EPUB
+on:
+  workflow_dispatch: 
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Install dependencies
+        run: make install-dependencies
+      - name: Generate artifacts
+        run: make epub
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: build-artifacts
+          path: |
+            build
+      - name: Clean up
+        run: make clean

@@ -1,4 +1,4 @@
-name: Generate book artifacts
+name: Generate PDF
 on:
   workflow_dispatch: 
 jobs:
@@ -9,13 +9,13 @@ jobs:
         uses: actions/checkout@v6
       - name: Install dependencies
         run: make install-dependencies
-      - name: Generate book artifacts
-        run: make all
-      - name: Upload book artifacts
+      - name: Generate artifacts
+        run: make pdf
+      - name: Upload artifacts
         uses: actions/upload-artifact@v6
         with:
-          name: pandoc-artifacts
+          name: build-artifacts
           path: |
             build
-      - name: Clean up build directory
+      - name: Clean up
         run: make clean
